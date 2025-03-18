@@ -1,0 +1,15 @@
+# Ignore artifacts:
+build
+coverage
+node_nodules/
+dist/
+node_modules
+dist
+build
+coverage
+public
+package-lock.json
+yarn.lock
+*.min.js
+*.bundle.js
+.env
