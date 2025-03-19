@@ -12,11 +12,13 @@ export class Gameboard {
   }
 
   receiveAttack(x, y) {
+    if (x >= 10 || y >= 10) return false;
     const target = this.board[x][y];
     if (target !== null) {
       target.hit();
-      return true;
+      this.board[x][y] = 'X';
+    } else {
+      this.board[x][y] = 'O';
     }
-    return false;
   }
 }

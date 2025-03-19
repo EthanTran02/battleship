@@ -4,15 +4,22 @@ import { Gameboard } from './modules/gameboard';
 describe('Ship', () => {
   const ship = new Ship(3);
 
+  beforeEach(() => {
+    ship.timesHit = 0;
+  });
+
   describe('hit', () => {
     it('not getting hit', () => {
       expect(ship.timesHit).toBe(0);
     });
     it('got hit first time', () => {
+      expect(ship.timesHit).toBe(0);
       ship.hit();
       expect(ship.timesHit).toBe(1);
     });
     it('got hit seconnd time', () => {
+      expect(ship.timesHit).toBe(0);
+      ship.hit();
       ship.hit();
       expect(ship.timesHit).toBe(2);
     });
@@ -20,10 +27,14 @@ describe('Ship', () => {
 
   describe('isSunk', () => {
     it('sunk', () => {
-      expect(ship.isSunk(3, 3)).toBe('the ship sunked');
+      expect(ship.isSunk()).toBe(false);
+      ship.hit();
+      ship.hit();
+      ship.hit();
+      expect(ship.isSunk()).toBe(true);
     });
     it('alive', () => {
-      expect(ship.isSunk(5, 2)).toBe('the ship alive');
+      expect(ship.isSunk()).toBe(false);
     });
   });
 });
@@ -46,7 +57,7 @@ describe('Gameboard', () => {
       expect(gameBoard.board[2][0]).toBe(ship);
       expect(gameBoard.board[3][0]).toBe(null);
     });
-    it('check place not get place', () => {
+    it('check place where ship not get place', () => {
       expect(gameBoard.board[4][0]).toBe(null);
       expect(gameBoard.board[1][7]).toBe(null);
       expect(gameBoard.board[5][4]).toBe(null);
@@ -57,14 +68,16 @@ describe('Gameboard', () => {
   describe('recieveAttack', () => {
     it('ship got hit', () => {
       expect(ship.timesHit).toBe(0);
-      expect(gameBoard.receiveAttack(0, 0)).toBe(true);
+      gameBoard.receiveAttack(0, 0);
       expect(ship.timesHit).toBe(1);
+      expect(gameBoard.board[0][0]).toBe('X');
     });
 
     it('miss the hit', () => {
       expect(ship.timesHit).toBe(0);
-      expect(gameBoard.receiveAttack(3, 5)).toBe(false);
+      gameBoard.receiveAttack(3, 5);
       expect(ship.timesHit).toBe(0);
+      expect(gameBoard.board[3][5]).toBe('O');
     });
   });
 });

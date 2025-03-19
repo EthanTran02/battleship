@@ -9,7 +9,7 @@ export class Ship {
     this.timesHit += 1;
   }
 
-  isSunk(length, timesHit) {
-    return length <= timesHit ? 'the ship sunked' : 'the ship alive';
+  isSunk() {
+    return this.length <= this.timesHit;
   }
 }
