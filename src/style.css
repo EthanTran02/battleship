@@ -78,10 +78,25 @@ body > h1 {
 
 #main {
   display: flex;
-  gap: 50px;
+  gap: 140px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-bottom: 150px;
 }
 #main > div {
   flex: 1;
-  height: 300px;
-  border: solid 1px gray;
+}
+
+/* board */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+}
+
+.cell {
+  width: auto;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.395);
+  border-radius: 2px;
 }
