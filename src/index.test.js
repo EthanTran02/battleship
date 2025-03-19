@@ -84,9 +84,14 @@ describe('Gameboard', () => {
 });
 
 describe('Player', () => {
-  it('player have board', () => {
+  it('player have gameboard', () => {
     const player = new Player('player1');
-    expect(player.board).toBeInstanceOf(Gameboard);
+    expect(player.gameboard).toBeInstanceOf(Gameboard);
+  });
+  it('check player board', () => {
+    const player = new Player('player1');
+    const gameboard = new Gameboard();
+    expect(player.gameboard.board).toStrictEqual(gameboard.board);
   });
   it('player real', () => {
     const player = new Player('real');
