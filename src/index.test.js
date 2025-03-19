@@ -1,5 +1,6 @@
 import { Ship } from './modules/ship';
 import { Gameboard } from './modules/gameboard';
+import { Player } from './modules/player';
 
 describe('Ship', () => {
   const ship = new Ship(3);
@@ -79,5 +80,20 @@ describe('Gameboard', () => {
       expect(ship.timesHit).toBe(0);
       expect(gameBoard.board[3][5]).toBe('O');
     });
+  });
+});
+
+describe('Player', () => {
+  it('player have board', () => {
+    const player = new Player('player1');
+    expect(player.board).toBeInstanceOf(Gameboard);
+  });
+  it('player real', () => {
+    const player = new Player('real');
+    expect(player.name).toBe('real');
+  });
+  it('player machine', () => {
+    const player = new Player('machine');
+    expect(player.name).toBe('machine');
   });
 });
