@@ -66,3 +66,22 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* -------------------------------------------------- */
+
+/* Main */
+body > h1 {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+#main {
+  display: flex;
+  gap: 50px;
+}
+#main > div {
+  flex: 1;
+  height: 300px;
+  border: solid 1px gray;
+}
