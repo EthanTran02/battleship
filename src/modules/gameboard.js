@@ -10,4 +10,13 @@ export class Gameboard {
       this.board[x + i][y] = ship;
     }
   }
+
+  receiveAttack(x, y) {
+    const target = this.board[x][y];
+    if (target !== null) {
+      target.hit();
+      return true;
+    }
+    return false;
+  }
 }
