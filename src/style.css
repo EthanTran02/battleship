@@ -100,3 +100,12 @@ body > h1 {
   border: 1px solid rgba(0, 0, 0, 0.395);
   border-radius: 2px;
 }
+
+.cell:hover {
+  background-color: rgba(128, 128, 128, 0.148);
+  cursor: pointer;
+}
+
+.ship {
+  background-color: rgba(25, 25, 198, 0.463);
+}
