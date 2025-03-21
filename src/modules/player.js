@@ -4,7 +4,7 @@ export class Player {
   constructor(name) {
     this.name = name;
     this.gameboard = new Gameboard();
-    this.attackedCoordinates = new Map();
+    this.attackedCoordinates = new Set();
   }
 
   attackRandomly(enemy) {
@@ -13,7 +13,7 @@ export class Player {
       x = Math.floor(Math.random() * 10);
       y = Math.floor(Math.random() * 10);
     } while (this.attackedCoordinates.has(`${x},${y}`));
-    this.attackedCoordinates.set(`${x},${y}`);
+    this.attackedCoordinates.add(`${x},${y}`);
     enemy.gameboard.receiveAttack(x, y);
   }
 }

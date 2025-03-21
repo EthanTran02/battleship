@@ -1,9 +1,8 @@
-import { Player } from './player';
-
 export class Game {
   constructor(realPlayer, computerPlayer) {
     this.realPlayer = realPlayer;
     this.computerPlayer = computerPlayer;
+    this.currentTurn = 'real';
   }
 
   checkGameOver() {
@@ -11,8 +10,8 @@ export class Game {
       row.every(
         cell =>
           cell === null ||
-          cell === 'X' ||
-          cell === 'O' ||
+          cell === 'hit' ||
+          cell === 'miss' ||
           (typeof cell === 'object' && cell.isSunk())
       )
     );
@@ -20,12 +19,21 @@ export class Game {
       row.every(
         cell =>
           cell === null ||
-          cell === 'X' ||
-          cell === 'O' ||
+          cell === 'hit' ||
+          cell === 'miss' ||
           (typeof cell === 'object' && cell.isSunk())
       )
     );
 
     return realSunk || computerSunk;
+  }
+
+  handleTurnComplete() {
+    if (this.checkGameOver()) return;
+    this.currentTurn = 'computer';
+    this.computerPlayer.attackRandomly(this.realPlayer);
+    if (!this.checkGameOver()) {
+      this.currentTurn = 'real';
+    }
   }
 }
