@@ -16,9 +16,9 @@ export class Gameboard {
     const target = this.board[x][y];
     if (target !== null) {
       target.hit();
-      this.board[x][y] = 'X';
+      this.board[x][y] = 'hit';
     } else {
-      this.board[x][y] = 'O';
+      this.board[x][y] = 'miss';
     }
   }
 }
