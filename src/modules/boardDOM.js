@@ -33,7 +33,7 @@ export function updateBoard(player, containerID) {
       cellElement.classList.add('cell');
       const cellContent = board[rowIndex][colIndex];
       // Check if the cell contains a ship object (not null and not 'X' or 'O')
-      if (cellContent !== null && cellContent !== 'X' && cellContent !== 'O') {
+      if (cellContent !== null && cellContent !== 'hit' && cellContent !== 'miss') {
         cellElement.classList.add('ship');
       }
       grid.appendChild(cellElement);
