@@ -1,3 +1,5 @@
+import { updateBoardReal } from './dom';
+
 export class Game {
   constructor(realPlayer, computerPlayer) {
     this.realPlayer = realPlayer;
@@ -31,9 +33,12 @@ export class Game {
   handleTurnComplete() {
     if (this.checkGameOver()) return;
     this.currentTurn = 'computer';
-    this.computerPlayer.attackRandomly(this.realPlayer);
-    if (!this.checkGameOver()) {
-      this.currentTurn = 'real';
-    }
+    setTimeout(() => {
+      this.computerPlayer.attackRandomly(this.realPlayer);
+      updateBoardReal(this.realPlayer, 'board-container1');
+      if (!this.checkGameOver()) {
+        this.currentTurn = 'real';
+      }
+    }, 1000);
   }
 }

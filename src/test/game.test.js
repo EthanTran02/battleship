@@ -29,9 +29,9 @@ describe('Game', () => {
 
     expect(game.currentTurn).toBe('real');
     game.handleTurnComplete();
-    expect(game.currentTurn).toBe('real');
+    expect(game.currentTurn).toBe('computer');
 
-    // computerPlayer.attackRandomly(realPlayer);  // cmt out this line
+    computerPlayer.attackRandomly(realPlayer);
 
     const attacked = realPlayer.gameboard.board
       .flat()
