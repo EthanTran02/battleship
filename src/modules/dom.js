@@ -1,6 +1,7 @@
 export function updateBoardReal(player, containerID) {
   const container = document.getElementById(containerID);
   const board = player.gameboard.board;
+  const container1 = document.getElementById('board-container1');
 
   // Clear and recreate the grid structure
   container.innerHTML = '';
@@ -62,12 +63,17 @@ export function updateBoardComp(player, containerID) {
 
 export function setupPlayerTurn(game, containerID) {
   const container = document.getElementById(containerID);
+  const container1 = document.getElementById('board-container1');
+  const container2 = document.getElementById('board-container2');
 
   container.removeEventListener('click', handleEvent);
   container.addEventListener('click', handleEvent);
 
+  // event for cells
   function handleEvent(event) {
     const modal = document.getElementById('modal-result');
+    //add blur for real player board
+    container1.classList = '';
 
     if (!event.target.classList.contains('cell')) return;
     if (game.currentTurn === 'real') {
@@ -76,6 +82,7 @@ export function setupPlayerTurn(game, containerID) {
       const y = parseInt(cell.dataset.y);
       const cellContent = game.computerPlayer.gameboard.board[x][y];
 
+      container2.classList.add('blur');
       if (cellContent !== 'hit' && cellContent !== 'miss') {
         game.computerPlayer.gameboard.receiveAttack(x, y);
         updateBoardComp(game.computerPlayer, containerID);
@@ -83,6 +90,13 @@ export function setupPlayerTurn(game, containerID) {
         updateBoardReal(game.realPlayer, 'board-container1');
       }
 
+      // blur for real and computer board
+      setTimeout(() => {
+        container2.classList = '';
+        container1.classList.add('blur');
+      }, 1000);
+
+      // if game over
       if (game.checkGameOver()) {
         modal.style.display = 'block';
         container.removeEventListener('click', handleEvent);
@@ -91,4 +105,10 @@ export function setupPlayerTurn(game, containerID) {
       }
     }
   }
+}
+
+export function restartPage() {
+  document.getElementById('restart-button').addEventListener('click', () => {
+    location.reload();
+  });
 }

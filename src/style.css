@@ -107,12 +107,15 @@ body > h1 {
   border-radius: 2px;
 }
 
-#board-container2 .cell:hover {
+/* computer board */
+
+#board-container2:not(.blur) .cell:not(.hit):not(.miss):not(.ship):hover {
   background-color: rgba(128, 128, 128, 0.148);
   cursor: pointer;
 }
-#board-container2.game-over .cell:hover {
-  background-color: rgba(255, 255, 255, 0);
+
+#board-container2.game-over .cell:not(.hit):not(.miss):not(.ship):hover {
+  background-color: transparent;
   cursor: default;
 }
 
@@ -121,22 +124,22 @@ body > h1 {
 .ship {
   background-color: rgba(0, 0, 189, 0.4);
 }
-.ship:hover {
-  background-color: rgba(0, 0, 189, 0.2);
-}
 
 .hit {
   background-color: rgba(255, 0, 0, 0.7);
-}
-.hit:hover {
-  background-color: rgba(255, 0, 0, 0.4);
 }
 
 .miss {
   background-color: rgba(128, 128, 128, 0.4);
 }
-.miss:hover {
-  background-color: rgba(128, 128, 128, 0.2);
+
+/* board blur effect */
+
+#board-container1.blur {
+  opacity: 0.4;
+}
+#board-container2.blur {
+  opacity: 0.4;
 }
 
 /* modal result */

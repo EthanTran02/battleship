@@ -5,6 +5,7 @@ import {
   updateBoardComp,
   updateBoardReal,
   setupPlayerTurn,
+  restartPage,
 } from './modules/dom';
 import { Game } from './modules/game';
 
@@ -24,3 +25,5 @@ updateBoardComp(computerPlayer, 'board-container2');
 
 const game = new Game(realPlayer, computerPlayer);
 setupPlayerTurn(game, 'board-container2');
+
+restartPage();
