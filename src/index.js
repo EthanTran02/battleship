@@ -57,14 +57,15 @@ const computerPlayer = new Player('computer');
 //   compship32,
 //   compship41
 // );
-const compship11 = new Ship(1);
-realPlayer.gameboard.placeShip(compship11, [0, 0]);
+const compship11 = new Ship(2);
+computerPlayer.gameboard.placeShip(compship11, [0, 0]);
 updateBoardComp(computerPlayer, 'board-container2');
 
+//start the game
 const game = new Game(realPlayer, computerPlayer);
 setupPlayerTurn(game, 'board-container2');
 
-// --------------- evenListener for button ---------------
+// --------------- evenListener for button --------------- //
 restartPage();
 
 document.getElementById('random').addEventListener('click', () => {
@@ -82,7 +83,6 @@ document.getElementById('random').addEventListener('click', () => {
   );
   updateBoardReal(realPlayer, 'board-container1');
 });
-
 
 // FIX: player win => popup modal | computerwin NOT popup modal
 // maybe a board for checkint status => 2 baord display all ship ship a ship sunk, update the board for real-time interaction
