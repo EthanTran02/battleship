@@ -1,12 +1,8 @@
 import './style.css';
 import { Player } from './modules/player';
 import { Ship } from './modules/ship';
-import {
-  updateBoardComp,
-  updateBoardReal,
-  setupPlayerTurn,
-  restartPage,
-} from './modules/dom';
+import { updateBoardComp, updateBoardReal, restartPage } from './modules/dom';
+import { setupPlayerTurn } from './modules/init';
 import { Game } from './modules/game';
 
 // Player
@@ -44,7 +40,8 @@ updateBoardComp(computerPlayer, 'board-container2');
 const game = new Game(realPlayer, computerPlayer);
 setupPlayerTurn(game, 'board-container2');
 
-restartPage();
+// evenListener for button
+restartPageButton();
 
 document.getElementById('random').addEventListener('click', () => {
   realPlayer.gameboard.placeShipRandomly(
