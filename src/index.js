@@ -40,7 +40,7 @@ updateBoardComp(computerPlayer, 'board-container2');
 const game = new Game(realPlayer, computerPlayer);
 setupPlayerTurn(game, 'board-container2');
 
-// evenListener for button
+// --------------- evenListener for button ---------------
 restartPage();
 
 document.getElementById('random').addEventListener('click', () => {
