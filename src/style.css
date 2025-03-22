@@ -162,3 +162,10 @@ body > h1 {
 #modal-result > h2 {
   margin-bottom: 12px;
 }
+
+/* random button */
+
+#random {
+  margin-top: 20px;
+  padding: 12px 24px;
+}

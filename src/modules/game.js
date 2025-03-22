@@ -28,12 +28,14 @@ export class Game {
     );
 
     if (realSunk) {
+      document.getElementById('winner-name').innerText = 'Computer Win!';
       return true;
     }
     if (computerSunk) {
+      document.getElementById('winner-name').innerText = 'Real Player Win!';
       return true;
     }
-    return false
+    return false;
   }
 
   handleTurnComplete() {

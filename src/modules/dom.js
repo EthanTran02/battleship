@@ -89,20 +89,19 @@ export function setupPlayerTurn(game, containerID) {
         game.handleTurnComplete();
         updateBoardReal(game.realPlayer, 'board-container1');
       }
+      // if game over
+      if (game.checkGameOver()) {
+        modal.style.display = 'block';
+        container2.removeEventListener('click', handleEvent);
+        container2.classList.add('game-over');
+        return;
+      }
 
       // blur for real and computer board
       setTimeout(() => {
         container2.classList = '';
         container1.classList.add('blur');
       }, 1000);
-
-      // if game over
-      if (game.checkGameOver()) {
-        modal.style.display = 'block';
-        container.removeEventListener('click', handleEvent);
-        container.classList.add('game-over');
-        return;
-      }
     }
   }
 }
