@@ -67,8 +67,9 @@ export function setupPlayerTurn(game, containerID) {
   container.addEventListener('click', handleEvent);
 
   function handleEvent(event) {
-    if (!event.target.classList.contains('cell')) return;
+    const modal = document.getElementById('modal-result');
 
+    if (!event.target.classList.contains('cell')) return;
     if (game.currentTurn === 'real') {
       const cell = event.target;
       const x = parseInt(cell.dataset.x);
@@ -80,6 +81,13 @@ export function setupPlayerTurn(game, containerID) {
         updateBoardComp(game.computerPlayer, containerID);
         game.handleTurnComplete();
         updateBoardReal(game.realPlayer, 'board-container1');
+      }
+
+      if (game.checkGameOver()) {
+        modal.style.display = 'block';
+        container.removeEventListener('click', handleEvent);
+        container.classList.add('game-over');
+        return;
       }
     }
   }

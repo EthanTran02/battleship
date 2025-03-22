@@ -27,7 +27,13 @@ export class Game {
       )
     );
 
-    return realSunk || computerSunk;
+    if (realSunk) {
+      return true;
+    }
+    if (computerSunk) {
+      return true;
+    }
+    return false
   }
 
   handleTurnComplete() {
