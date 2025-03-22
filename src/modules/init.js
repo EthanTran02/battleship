@@ -1,4 +1,4 @@
-import { updateBoardComp, updateBoardReal } from "./dom";
+import { updateBoardComp, updateBoardReal } from './dom';
 
 export function setupPlayerTurn(game, containerID) {
   const container = document.getElementById(containerID);
@@ -16,6 +16,9 @@ export function setupPlayerTurn(game, containerID) {
   function handleEvent(event) {
     const modal = document.getElementById('modal-result');
     const cell = event.target;
+
+    // hide the randomButton
+    document.getElementById('random').style.display = 'none';
 
     if (!cell.classList.contains('cell')) return;
     if (cell.classList.contains('hit') || cell.classList.contains('miss')) {
