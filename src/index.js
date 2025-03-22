@@ -41,7 +41,7 @@ const game = new Game(realPlayer, computerPlayer);
 setupPlayerTurn(game, 'board-container2');
 
 // evenListener for button
-restartPageButton();
+restartPage();
 
 document.getElementById('random').addEventListener('click', () => {
   realPlayer.gameboard.placeShipRandomly(
