@@ -16,4 +16,8 @@ export class Player {
     this.attackedCoordinates.add(`${x},${y}`);
     enemy.gameboard.receiveAttack(x, y);
   }
+
+  computerAttack() {
+
+  }
 }

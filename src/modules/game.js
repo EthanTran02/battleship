@@ -32,7 +32,7 @@ export class Game {
       return true;
     }
     if (computerSunk) {
-      document.getElementById('winner-name').innerText = 'Real Player Win!';
+      document.getElementById('winner-name').innerText = 'Player Win!';
       return true;
     }
     return false;
