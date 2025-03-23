@@ -68,21 +68,21 @@ setupPlayerTurn(game, 'board-container2');
 // --------------- evenListener for button --------------- //
 restartPage();
 
-document.getElementById('random').addEventListener('click', () => {
-  realPlayer.gameboard.placeShipRandomly(
-    ship11,
-    ship12,
-    ship13,
-    ship14,
-    ship21,
-    ship22,
-    ship23,
-    ship31,
-    ship32,
-    ship41
-  );
-  updateBoardReal(realPlayer, 'board-container1');
-});
+// document.getElementById('random').addEventListener('click', () => {
+//   realPlayer.gameboard.placeShipRandomly(
+//     ship11,
+//     ship12,
+//     ship13,
+//     ship14,
+//     ship21,
+//     ship22,
+//     ship23,
+//     ship31,
+//     ship32,
+//     ship41
+//   );
+//   updateBoardReal(realPlayer, 'board-container1');
+// });
 
 // FIX: player win => popup modal | computerwin NOT popup modal
 // maybe a board for checkint status => 2 baord display all ship ship a ship sunk, update the board for real-time interaction
