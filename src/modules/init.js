@@ -42,16 +42,21 @@ export function setupPlayerTurn(game, containerID) {
         updateBoardReal(game.realPlayer, 'board-container1');
       }
 
-      // if game over
-      if (game.checkGameOver()) {
-        modal.style.display = 'block';
-        container2.removeEventListener('click', handleEvent);
-        container2.classList.add('game-over');
-        return;
-      }
-
-      // back to blur on player turn
       setTimeout(() => {
+        // check game over
+        if (game.checkGameOver()) {
+          modal.style.display = 'block';
+          container2.removeEventListener('click', handleEvent);
+          container2.classList.add('game-over');
+          if (game.currentTurn === 'real') {
+            document.getElementById('winner-name').innerText = 'Player Win!';
+          } else if (game.currentTurn === 'computer') {
+            document.getElementById('winner-name').innerText = 'Computer Win!';
+          }
+          return;
+        }
+
+        // back to blur on player turn
         container1.classList.add('blur');
         container2.classList = '';
       }, 1000);

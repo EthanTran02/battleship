@@ -29,7 +29,7 @@ const realPlayer = new Player('real');
 //   ship32,
 //   ship41
 // );
-const ship11 = new Ship(1);
+const ship11 = new Ship(6);
 realPlayer.gameboard.placeShip(ship11, [0, 0]);
 updateBoardReal(realPlayer, 'board-container1');
 

@@ -28,11 +28,11 @@ export class Game {
     );
 
     if (realSunk) {
-      document.getElementById('winner-name').innerText = 'Computer Win!';
+      this.currentTurn = 'computer';
       return true;
     }
     if (computerSunk) {
-      document.getElementById('winner-name').innerText = 'Player Win!';
+      this.currentTurn = 'real';
       return true;
     }
     return false;
