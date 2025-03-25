@@ -285,16 +285,18 @@ body > h1 {
 #random:hover {
   background-color: #27ae60;
   transform: translateY(-2px);
-}
+}l
 
 /* game status */
 #game-stat {
   position: absolute;
   height: 100px;
   width: 100px;
-  right: 20px;
+  right: -8px;
   top: 50px;
   border-radius: 8px;
+
+  opacity: 0.6;
 }
 
 /* ships4 */
