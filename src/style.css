@@ -102,9 +102,17 @@ body > h1 {
 
 .cell {
   width: auto;
-  height: 40px;
+  height: 28px;
   border: 1px solid rgba(0, 0, 0, 0.395);
   border-radius: 2px;
+}
+/* board */
+#board-container1 {
+  width: 300px;
+}
+
+#board-container2 {
+  width: 300px;
 }
 
 /* computer board */
@@ -169,3 +177,65 @@ body > h1 {
   margin-top: 20px;
   padding: 12px 24px;
 }
+
+/* game status */
+
+#main > div {
+  position: relative;
+}
+
+#game-stat {
+  border: 1px solid black;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+
+  right: 0;
+  top: 50px;
+}
+
+/* ships4 */
+
+#ship-4 {
+  margin-bottom: 4px;
+}
+#ship-4 > .ship-41 {
+  display: flex;
+  justify-content: end;
+}
+
+#ship-4 > .ship-41 > .ship {
+  border: 1px solid black;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* ship3  */
+#ship-3 {
+  display: flex;
+  justify-content: end;
+  gap: 4px;
+}
+
+#ship-3 > .ship-31 {
+  display: flex;
+  justify-content: end;
+}
+#ship-3 > .ship-32 {
+  display: flex;
+  justify-content: end;
+}
+#ship-3 > .ship-31 > .ship {
+  border: 1px solid black;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+#ship-3 > .ship-32 > .ship {
+  border: 1px solid black;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
