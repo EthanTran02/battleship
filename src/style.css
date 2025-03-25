@@ -288,3 +288,7 @@ body > h1 {
   height: 12px;
   border-radius: 2px;
 }
+
+.ship.sunk {
+  opacity: 0.4 !important; /* Ensure it overrides other styles */
+}

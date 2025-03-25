@@ -17,9 +17,8 @@ export function setupPlayerTurn(game, containerID) {
     const modal = document.getElementById('modal-result');
     const cell = event.target;
 
-    // checkShipSunk()
     // hide the randomButton
-    document.getElemedntById('random').style.display = 'none';
+    document.getElementById('random').style.display = 'none';
 
     if (!cell.classList.contains('cell')) return;
     if (cell.classList.contains('hit') || cell.classList.contains('miss')) {
@@ -41,6 +40,9 @@ export function setupPlayerTurn(game, containerID) {
         updateBoardComp(game.computerPlayer, containerID);
         game.handleTurnComplete();
         updateBoardReal(game.realPlayer, 'board-container1');
+
+        // update the status board
+        checkShipSunk(game.computerPlayer);
       }
 
       setTimeout(() => {
@@ -63,4 +65,42 @@ export function setupPlayerTurn(game, containerID) {
       }, 1000);
     }
   }
+}
+
+export function checkShipSunk(player) {
+  const ships = player.gameboard.ships;
+  const counts = { 4: 0, 3: 0, 2: 0, 1: 0 };
+
+  ships.forEach(ship => {
+    const length = ship.length;
+    if (![4, 3, 2, 1].includes(length)) return;
+
+    const index = counts[length];
+    counts[length]++;
+
+    const isSunk = ship.isSunk();
+    let containerSelector;
+
+    switch (length) {
+      case 4:
+        containerSelector = `#ship-4 .ship-41`;
+        break;
+      case 3:
+        containerSelector = `#ship-3 .ship-3${index + 1}`;
+        break;
+      case 2:
+        containerSelector = `#ship-2 .ship-2${index + 1}`;
+        break;
+      case 1:
+        containerSelector = `#ship-1 .ship-1${index + 1}`;
+        break;
+      default:
+        return;
+    }
+
+    const shipElements = document.querySelectorAll(
+      `${containerSelector} .ship`
+    );
+    shipElements.forEach(el => el.classList.toggle('sunk', isSunk));
+  });
 }

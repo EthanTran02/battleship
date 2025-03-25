@@ -3,6 +3,7 @@ export class Gameboard {
     this.board = Array(10)
       .fill()
       .map(() => Array(10).fill(null));
+    this.ships = [];
   }
 
   placeShip(ship, [x, y]) {
@@ -101,6 +102,7 @@ export class Gameboard {
 
   // Helper method to place a ship with specified orientation
   placeShipWithOrientation(ship, [x, y], isHorizontal) {
+    this.ships.push(ship);
     for (let i = 0; i < ship.length; i++) {
       const placeX = isHorizontal ? x : x + i;
       const placeY = isHorizontal ? y + i : y;
