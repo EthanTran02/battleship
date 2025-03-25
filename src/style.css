@@ -290,5 +290,5 @@ body > h1 {
 }
 
 .ship.sunk {
-  opacity: 0.4 !important; /* Ensure it overrides other styles */
+  opacity: 0.4; /* Ensure it overrides other styles */
 }

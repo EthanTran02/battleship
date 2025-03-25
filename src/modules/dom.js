@@ -65,3 +65,11 @@ export function restartPage() {
     location.reload();
   });
 }
+
+export function shipPlaceRandomly(player, containerID) {
+  document.getElementById('random').addEventListener('click', () => {
+    const ships = player.gameboard.ships;
+    player.gameboard.placeShipRandomly(...ships);
+    updateBoardReal(player, containerID);
+  });
+}
