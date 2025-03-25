@@ -2,7 +2,7 @@ import './style.css';
 import { Player } from './modules/player';
 import { Ship } from './modules/ship';
 import { updateBoardComp, updateBoardReal, restartPage } from './modules/dom';
-import { setupPlayerTurn } from './modules/init';
+import { setupPlayerTurn } from './modules/gameController';
 import { Game } from './modules/game';
 
 // Player

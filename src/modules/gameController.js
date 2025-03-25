@@ -47,15 +47,7 @@ export function setupPlayerTurn(game, containerID) {
 
       setTimeout(() => {
         // check game over
-        if (game.checkGameOver()) {
-          modal.style.display = 'block';
-          container2.removeEventListener('click', handleEvent);
-          container2.classList.add('game-over');
-          if (game.currentTurn === 'real') {
-            document.getElementById('winner-name').innerText = 'Player Win!';
-          } else if (game.currentTurn === 'computer') {
-            document.getElementById('winner-name').innerText = 'Computer Win!';
-          }
+        if (handleGameOver(game, modal, container2, handleEvent)) {
           return;
         }
 
@@ -65,6 +57,22 @@ export function setupPlayerTurn(game, containerID) {
       }, 1000);
     }
   }
+}
+
+function handleGameOver(game, modal, container2, handleEvent) {
+  if (!game.checkGameOver()) {
+    return false;
+  }
+
+  modal.style.display = 'block';
+  container2.removeEventListener('click', handleEvent);
+  container2.classList.add('game-over');
+
+  const winnerName =
+    game.currentTurn === 'real' ? 'Player Win!' : 'Computer Win!';
+  document.getElementById('winner-name').innerText = winnerName;
+
+  return true;
 }
 
 export function checkShipSunk(player) {
