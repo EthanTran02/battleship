@@ -17,8 +17,9 @@ export function setupPlayerTurn(game, containerID) {
     const modal = document.getElementById('modal-result');
     const cell = event.target;
 
+    // checkShipSunk()
     // hide the randomButton
-    document.getElementById('random').style.display = 'none';
+    document.getElemedntById('random').style.display = 'none';
 
     if (!cell.classList.contains('cell')) return;
     if (cell.classList.contains('hit') || cell.classList.contains('miss')) {

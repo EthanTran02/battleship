@@ -216,6 +216,7 @@ body > h1 {
   display: flex;
   justify-content: end;
   gap: 4px;
+  margin-bottom: 4px;
 }
 
 #ship-3 > .ship-31 {
@@ -239,3 +240,51 @@ body > h1 {
   border-radius: 2px;
 }
 
+/* ship2 */
+#ship-2 {
+  display: flex;
+  justify-content: end;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+#ship-2 > .ship-21,
+#ship-2 > .ship-22,
+#ship-2 > .ship-23 {
+  display: flex;
+  justify-content: end;
+}
+
+#ship-2 > .ship-21 > .ship,
+#ship-2 > .ship-22 > .ship,
+#ship-2 > .ship-23 > .ship {
+  border: 1px solid black;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* ship1 */
+#ship-1 {
+  display: flex;
+  justify-content: end;
+  gap: 4px;
+}
+
+#ship-1 > .ship-11,
+#ship-1 > .ship-12,
+#ship-1 > .ship-13,
+#ship-1 > .ship-14 {
+  display: flex;
+  justify-content: end;
+}
+
+#ship-1 > .ship-11 > .ship,
+#ship-1 > .ship-12 > .ship,
+#ship-1 > .ship-13 > .ship,
+#ship-1 > .ship-14 > .ship {
+  border: 1px solid black;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
