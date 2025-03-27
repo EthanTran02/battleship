@@ -9,6 +9,7 @@ export class Gameboard {
   placeShip(ship, [x, y]) {
     for (let i = 0; i < ship.length; i++) {
       this.board[x + i][y] = ship;
+      this.ships.push(ship);
     }
   }
 
