@@ -47,6 +47,6 @@ export class Game {
       if (!this.checkGameOver()) {
         this.currentTurn = 'real';
       }
-    }, 1000);
+    }, 500);
   }
 }
