@@ -5,6 +5,9 @@ export function setupPlayerTurn(game, containerID) {
   const container1 = document.getElementById('board-container1');
   const container2 = document.getElementById('board-container2');
 
+  const playerState = document.getElementById('game-stat-real');
+  const compState = document.getElementById('game-stat-computer');
+
   container.removeEventListener('click', handleEvent);
   container.addEventListener('click', handleEvent);
 
@@ -16,6 +19,9 @@ export function setupPlayerTurn(game, containerID) {
   function handleEvent(event) {
     const modal = document.getElementById('modal-result');
     const cell = event.target;
+
+    playerState.style.display = 'block';
+    compState.style.display = 'block';
 
     // hide the randomButton
     document.getElementById('random').style.display = 'none';
@@ -41,7 +47,7 @@ export function setupPlayerTurn(game, containerID) {
         game.handleTurnComplete();
         updateBoardReal(game.realPlayer, 'board-container1');
 
-        // update the status board
+        // udpate computer status board
         checkShipSunk(game.computerPlayer);
       }
 
@@ -54,6 +60,9 @@ export function setupPlayerTurn(game, containerID) {
         // back to blur on player turn
         container1.classList.add('blur');
         container2.classList = '';
+
+        // update player status board
+        checkShipSunk(game.realPlayer);
       }, 1000);
     }
   }
@@ -91,16 +100,16 @@ export function checkShipSunk(player) {
 
     switch (length) {
       case 4:
-        containerSelector = `#ship-4 .ship-41`;
+        containerSelector = `#game-stat-${player.name} #ship-4 .ship-41`;
         break;
       case 3:
-        containerSelector = `#ship-3 .ship-3${index + 1}`;
+        containerSelector = `#game-stat-${player.name} #ship-3 .ship-3${index + 1}`;
         break;
       case 2:
-        containerSelector = `#ship-2 .ship-2${index + 1}`;
+        containerSelector = `#game-stat-${player.name} #ship-2 .ship-2${index + 1}`;
         break;
       case 1:
-        containerSelector = `#ship-1 .ship-1${index + 1}`;
+        containerSelector = `#game-stat-${player.name} #ship-1 .ship-1${index + 1}`;
         break;
       default:
         return;
