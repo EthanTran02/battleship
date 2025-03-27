@@ -1,0 +1,173 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Builds
+*.o
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# IDEs and Editors
+.idea/
+*.iml
+.vscode/
+*.suo
+*.user
+*.sln.docstates
+*.njsproj
+*.sln
+*.csproj
+*.vcxproj
+*.xcodeproj
+*.workspace
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# Compiled Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb-journal
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+*.egg
+*.whl
+sdist/
+
+# Temporary files
+*.bak
+*.swp
+*.tmp
+*.swo
+*~
+~$*  # Excel/Word temporary files
+
+# Log files
+*.log
+
+# Environment files
+.env
+.env.*  # Allows for .env.local, .env.test, etc.
+!.env.example  # Excludes .env.example files (good practice!)
+venv/
+env/
+
+# Node Modules
+node_modules/
+
+# Specific to certain tools/languages (Examples - adapt as needed)
+
+# Unity
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+UserSettings/
+MemoryCaptures/
+Logs/
+*.asset
+*.meta
+*.unitypackage
+
+# Unreal Engine
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.uproject.user
+*.sln
+
+# macOS specific
+*.app/
+
+# vim/neovim
+*.sw[a-p]
+*.un~
+.netrwhist
+
+# Ruby
+*.gem
+.bundle/
+vendor/
+
+# Java
+*.class
+*.jar
+*.war
+
+# C/C++
+*.out
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.pdf  # Consider carefully, as PDFs *might* be important for some projects.
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+
+# Configuration files (sensitive information)
+config.py  # Example - use with caution.  BETTER to use environment variables.
+secrets.json # Example, VERY IMPORTANT to exclude.
+*.pem
+*.cer
+*.p12
+*.pfx
+
+# virtualenv
+.venv/
+
+# Docker
+.dockerignore  # This is important if you're using Docker, but it's not a *file* to ignore.
+
+# Database files (SQLite, etc.)
+*.db
+*.sqlite
+*.sqlite3
+
+# .DS_Store (macOS)
+*.DS_Store
+
+# Thumbs.db (Windows)
+Thumbs.db
+
+# MacOS Finder Icon files
+.localized
+
+
+# Editor swap
+*.swp
+
+# Large Media Files (Consider Carefully - only if you're using LFS)
+# *.mp4
+# *.mov
+# *.avi
+# *.psd
+# *.zip  # Be very careful with zips - they *might* be deliverables.
+# *.rar
+
+# .env* except .env.example
+.env*
+!.env.example
+
+# node-gyp
+build/Release
