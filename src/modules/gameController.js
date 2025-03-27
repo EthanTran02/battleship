@@ -63,7 +63,7 @@ export function setupPlayerTurn(game, containerID) {
 
         // update player status board
         checkShipSunk(game.realPlayer);
-      }, 500);
+      }, 700);
     }
   }
 }
