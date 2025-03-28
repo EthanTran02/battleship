@@ -430,3 +430,52 @@ body > h1 {
 .ship.sunk {
   opacity: 0.4; /* Ensure it overrides other styles */
 }
+
+#how-to-play {
+  max-width: 800px;
+  margin: 30px auto;
+  margin-top: 120px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#how-to-play h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#how-to-play p {
+  color: #4a5568;
+  line-height: 1.6;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+#how-to-play span {
+  font-weight: bold;
+}
+
+.hit-indicator,
+.miss-indicator {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 4px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.hit-indicator {
+  background-color: rgba(255, 99, 132, 0.8);
+}
+
+.miss-indicator {
+  background-color: rgba(128, 128, 128, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
